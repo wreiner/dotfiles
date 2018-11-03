@@ -1,0 +1,6 @@
+# we want vi(m) for everything
+export EDITOR="vim"
+# in bash cli hit ESC to use vi commands
+set -o vi
+
+

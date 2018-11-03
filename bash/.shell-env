@@ -1,0 +1,25 @@
+##
+## Editors
+##
+export EDITOR=vim
+export GIT_EDITOR="$EDITOR"
+export USE_EDITOR="$EDITOR"
+export VISUAL=$EDITOR
+export PAGER=less
+
+##
+## Pager
+##
+export PAGER=less
+# TODO: checkout http://superuser.com/questions/124846/mercurial-colour-output-piped-to-less/403748#403748
+export LESS='-iFMRSX -x4'
+
+##
+## Paths
+##
+export PATH=$HOME/bin:$PATH:/sbin:/usr/sbin:/usr/local/qemu/bin:/usr/local/maven/bin:/$JAVA_HOME/bin:~/bin:/opt/android/android-sdk-linux/platform-tools:/opt/android/eclipse
+
+##
+## Java
+##
+export JAVA_HOME=/opt/java

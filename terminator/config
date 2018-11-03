@@ -1,0 +1,38 @@
+[global_config]
+  enabled_plugins = InactivityWatch, ActivityWatch, LaunchpadCodeURLHandler, APTURLHandler, Logger, LaunchpadBugURLHandler
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_image = None
+    scrollback_infinite = True
+    use_theme_colors = True
+  [[b+w]]
+    background_image = None
+  [[beamer]]
+    background_image = None
+    font = Fixed 15
+    use_system_font = False
+    use_theme_colors = True
+  [[caution]]
+    background_color = "#ffbebe"
+    background_image = None
+    font = DejaVu Sans Mono 10
+    foreground_color = "#000000"
+  [[new]]
+    background_color = "#bff2b5"
+    background_image = None
+    foreground_color = "#000000"
+  [[transp]]
+    background_darkness = 0.8
+    background_image = None
+    background_type = transparent
+    use_theme_colors = True

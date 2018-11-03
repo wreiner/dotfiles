@@ -1,0 +1,130 @@
+# Alias config for bash
+
+# source .bashrc
+alias srcb="source ~/.bashrc"
+
+# Git
+alias gia='git add'
+alias gic='git commit'
+alias gicm='git commit -m'
+alias gis='git status'
+alias gid='git diff'
+alias gif='git fetch'
+alias gim='git merge'
+alias gir='git rebase'
+alias gip='git push'
+alias gipu='git pull'
+alias giu='git unstage'
+alias gico='git checkout'
+
+# grep
+alias cgrep='grep --color=always'
+alias cg='grep --color=always'
+alias g="grep"
+alias gc="find . -type f -name '*.c'    | xargs grep"
+alias gch="find . -type f -name '*.[ch]' | xargs grep"
+alias gd='pushd'
+alias gh="find . -type f -name '*.h'    | xargs grep"
+alias gpd="find . -type f -name '*.pd?'  | xargs grep"
+alias grc="find . -type f -name '*.rc'   | xargs grep"
+alias gall="find . -type f -name '*'   | xargs grep"
+alias gpl="find . -type f -name '*.pl'   | xargs grep"
+alias gpy="find . -type f -name '*.py'   | xargs grep"
+alias gpp="find . -type f -name '*.pp'   | xargs grep"
+alias gjava="find . -type f -name '*.java'   | xargs grep"
+alias ghtml="find . -type f -name '*.html'   | xargs grep"
+
+# ls
+if [ "$PS1" ]; 
+then
+    # enable color support of ls
+    if [ "$TERM" != "dumb" ];
+    then
+        alias ls='ls --color=auto'
+    fi
+fi
+alias ll='ls -lpN'
+alias la='ls -lapN'
+alias lh="ls -a | grep '^\.'"
+
+# misc
+alias avrsync="rsync -av --progress"
+alias conmdr="echo -e 'connect 10:4F:A8:DA:EC:3C\nquit\n' | sudo bluetoothctl"
+alias ddstatus='sudo kill -USR1 $(pgrep ^dd)'
+alias h="history"
+alias passgen="pwgen -c -y"
+alias gqview="/usr/bin/geeqie"
+alias ports="ss -naptu state listening"
+portping(){ [[ -n "$1" && -n "$2" ]] && while true; do nc -zvw1 $1 $2 ; sleep 1 ; done }
+
+# Pacman
+alias pacse='pacman -Ss'
+alias pacupg='sudo pacman -Syu'        # Synchronize with repositories before upgrading packages that are out of date on the local system.
+alias pacin='sudo pacman -S'           # Install specific package(s) from the repositories
+alias pacins='sudo pacman -U'          # Install specific package not from the repositories but from a file 
+alias pacre='sudo pacman -R'           # Remove the specified package(s), retaining its configuration(s) and required dependencies
+alias pacrem='sudo pacman -Rns'        # Remove the specified package(s), its configuration(s) and unneeded dependencies
+alias pacrep='pacman -Si'              # Display information about a given package in the repositories
+alias pacreps='pacman -Ss'             # Search for package(s) in the repositories
+alias pacloc='pacman -Qi'              # Display information about a given package in the local database
+alias paclocs='pacman -Qs'             # Search for package(s) in the local database
+alias pacupd='sudo pacman -Sy && sudo abs'     # Update and refresh the local package and ABS databases against repositories
+alias pacinsd='sudo pacman -S --asdeps'        # Install given package(s) as dependencies of another package
+alias pacmir='sudo pacman -Syy'
+alias pacclrcache='sudo paccache -r -k 2'
+
+# secure operations
+alias rm="rm -i"
+alias mv="mv -i"
+alias cp="cp -i"
+alias ssu="sudo -i"
+
+# SSH
+alias sshr="ssh -l root"
+
+# SSH tunnel
+alias sshfladi="ssh ReinerWalter@uni.fladi.at -L 5222:localhost:5222"
+alias sshhetzner="ssh web01.wreiner.at"
+alias sshhetznerp="ssh web01.wreiner.at -L 3129:127.0.0.1:3128"
+alias sshhetznerm="ssh web01.wreiner.at -L 3125:localhost:25"
+alias sshhetznerf="ssh web01.wreiner.at -L 6667:irc.freenode.net:6667"
+alias sshhetznerxmr="ssh web01.wreiner.at -L 3140:pool.supportxmr.com:80"
+alias sshhetznertrtl="ssh web01.wreiner.at -L 3140:trtl.mine2gether.com:4445"
+alias sshhetznerints="ssh web01.wreiner.at -L 3140:45.32.171.89:4444"
+alias wrmctunnel="ssh dja01.wreiner.at -L 25565:localhost:25565"
+
+# webserver
+alias webd="cd /var/www"
+alias webtmp="cd /var/www/vhosts/www.wreiner.at/webtmp"
+
+# --- BE ---
+
+# BE-VPN
+alias vpncon="sudo vpnc-connect be-vpnc.conf"
+alias vpndiscon="sudo vpnc-disconnect"
+
+# SSD dev aliases
+alias cds='cd /opt/dashboard/ssd'
+alias sshdev='ssh ssddev01'
+alias initssddev='source /opt/dashboard/bin/activate; cd /opt/dashboard/ssd'
+
+alias ssdndevdeploy="avrsync -n --exclude '.git' --exclude 'log' /home/wreiner/bearingpoint/python/ssd/ root@10.1.80.142:/opt/SSD-REL-2.1/"
+alias ssddevdeploy="avrsync --exclude '.git' --exclude 'log' /home/wreiner/bearingpoint/python/ssd/ root@10.1.80.142:/opt/SSD-REL-2.1/"
+
+alias pssdndevdeploy="avrsync -n --exclude '.git' --exclude 'log' /home/wreiner/bearingpoint/python/ssd/ root@10.1.80.142:/opt/dashboard/ssd/"
+alias pssddevdeploy="avrsync --exclude '.git' --exclude 'log' /home/wreiner/bearingpoint/python/ssd/ root@10.1.80.142:/opt/dashboard/ssd/"
+
+alias rnssdndevget="avrsync -n --exclude '__pycache__' --exclude '.git' --exclude 'log' ssddev01:/opt/dashboard/ssd/ /home/wreiner/bearingpoint/python/ssd/"
+alias rnssddevget="avrsync --exclude '.git' --exclude 'log' ssddev01:/opt/dashboard/ssd/ /home/wreiner/bearingpoint/python/ssd/"
+
+alias nssdndevdeploy="avrsync -n --exclude '.git' --exclude 'log' /home/wreiner/bearingpoint/python/ssd/ root@10.1.80.159:/opt/dashboard/ssd/"
+alias nssddevdeploy="avrsync --exclude '.git' --exclude 'log' /home/wreiner/bearingpoint/python/ssd/ root@10.1.80.159:/opt/dashboard/ssd/"
+
+# SSH
+alias sshrook="ssh -l rrook"
+
+# SSH tunnel
+alias sshabanex="ssh root@abacvs -L 8081:127.0.0.1:8081"
+
+# techu DC01
+alias dc01rd="rdesktop -g 1366x768 grzdc01.techu.local"

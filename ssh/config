@@ -1,0 +1,32 @@
+Host 194.107.*
+    IdentityFile ~/.ssh/id_dsa_pw
+
+Host grzthor01
+    PubkeyAuthentication no
+
+Host 10.136.224.6
+    PubkeyAuthentication no
+
+Host sysh
+    User ssdadmin
+    Hostname systemhealth.infonova.at
+
+Host syshdev
+    User root
+    Hostname 10.1.80.142
+    ForwardAgent yes
+
+Host ssddev01
+    User root
+    Hostname 10.1.80.132
+    ForwardAgent yes
+
+# dd-wrt router
+Host 192.168.1.1
+    User root
+    KexAlgorithms +diffie-hellman-group1-sha1
+
+Host *
+	ControlMaster auto
+	ControlPath ~/.ssh/cm_socket/%r@%h:%p
+    ServerAliveInterval 60

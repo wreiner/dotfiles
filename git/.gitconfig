@@ -1,0 +1,9 @@
+[user]
+	name = Walter Reiner
+	email = walter.reiner@wreiner.at
+[core]
+	editor = vim
+	excludesfile = /home/wreiner/.gitignore
+	autocrlf = input
+[merge]
+	tool = meld
