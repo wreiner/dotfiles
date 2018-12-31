@@ -61,6 +61,16 @@ alias runpyws="python3 -m http.server"
 #   "portping <host> <port>"
 portping(){ [[ -n "$1" && -n "$2" ]] && while true; do nc -zvw1 $1 $2 ; sleep 1 ; done }
 
+# youtube-dl
+
+# download audio
+alias ytdl-a='youtube-dl -x -f bestaudio --prefer-free-formats -i --output "%(title)s.%(ext)s"'
+# download video
+alias ytdl-v='youtube-dl -f bestvideo+bestaudio --prefer-free-formats -i --output "%(title)s.%(ext)s"'
+# Youtube playlist which is organised in folders and Videos are numbered.
+# use youtube-dl-playlist -f 22 <link> 
+alias ytdl-pl='youtube-dl -o "./%(playlist_title)s/%(playlist_index)s_%(title)s.%(ext)s" '
+
 # Pacman
 alias pacse='pacman -Ss'
 alias pacupg='sudo pacman -Syu'        # Synchronize with repositories before upgrading packages that are out of date on the local system.
