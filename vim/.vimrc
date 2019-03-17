@@ -58,9 +58,13 @@ function s:SetCursorLine()
     " ctermbg=darkblue ctermfg=white
 endfunction
 autocmd VimEnter * call s:SetCursorLine()
-"set colorcolumn=80
 
 syntax on
+
+" Grey background after 80 chars for PEP8
+set colorcolumn=80
+hi ColorColumn ctermbg=15 guibg=#2c2d27
+let &colorcolumn=join(range(80,999), ',')
 
 "Assume xterm-background is lighter than foreground
 "set background=light
