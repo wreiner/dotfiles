@@ -86,6 +86,7 @@ alias pacupd='sudo pacman -Sy && sudo abs'     # Update and refresh the local pa
 alias pacinsd='sudo pacman -S --asdeps'        # Install given package(s) as dependencies of another package
 alias pacmir='sudo pacman -Syy'
 alias pacclrcache='sudo paccache -r -k 2'
+alias upgrwatch="watch \"df -h | grep 'root_lv\|tmp_lv\|var_lv\|opt_lv'\""
 
 # secure operations
 alias rm="rm -i"
