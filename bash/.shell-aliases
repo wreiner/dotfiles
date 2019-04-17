@@ -96,6 +96,7 @@ alias ssu="sudo -i"
 
 # SSH
 alias sshr="ssh -l root"
+alias rsshk="ssh-keygen -R"
 
 # SSH tunnel
 alias sshfladi="ssh ReinerWalter@fondor.fladi.at -L 5222:localhost:5222"
