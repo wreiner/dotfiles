@@ -7,29 +7,53 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Bundle 'rking/ag.vim'
+" https://github.com/rking/ag.vim
+" deprecated?
+" Bundle 'rking/ag.vim'
+
+" https://github.com/vim-airline/vim-airline
+" Lean & mean status/tabline for vim that's light as air.
 Bundle 'bling/vim-airline'
+" https://github.com/vim-airline/vim-airline-themes
+" This is the official theme repository for vim-airline
 Plugin 'vim-airline/vim-airline-themes'
 
+" https://github.com/tpope/vim-fugitive
+" fugitive.vim may very well be the best Git wrapper of all time
 Bundle 'tpope/vim-fugitive'
 
+" https://github.com/wellle/targets.vim
+" Targets.vim is a Vim plugin that adds various text objects to give you more targets to operate on.
 Bundle 'wellle/targets.vim'
 
+" https://github.com/tpope/vim-surround
+" Surround.vim is all about "surroundings": parentheses, brackets, quotes, XML tags, and more. The plugin provides mappings to easily delete, change and add such surroundings in pairs.
 " help 
 "   https://github.com/tpope/vim-surround/blob/master/doc/surround.txt
 "   http://www.vim.org/scripts/script.php?script_id=1697
 Plugin 'tpope/vim-surround'
 
+" https://github.com/scrooloose/nerdtree
+" The NERDTree is a file system explorer for the Vim editor.
 Plugin 'scrooloose/nerdtree'
 
+" https://github.com/ctrlpvim/ctrlp.vim
+" Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 " help
 "   https://www.youtube.com/watch?v=8XGueeQJsrA
 Plugin 'ctrlpvim/ctrlp.vim'
 
 " https://github.com/bkad/CamelCaseMotion
+" Motions for CamelCase
 Plugin 'bkad/CamelCaseMotion'
 
+" https://github.com/yegappan/mru
+" The Most Recently Used (MRU) plugin provides an easy access to a list of
+" recently opened/edited files in Vim.
 Plugin 'mru.vim'
+
+" https://github.com/nathanaelkane/vim-indent-guides
+" Indent Guides is a plugin for visually displaying indent levels in Vim.
 Plugin 'nathanaelkane/vim-indent-guides'
 
 call vundle#end()

@@ -59,6 +59,8 @@ alias ports="ss -naptu state listening"
 alias orddu="du -hs * | sort -hr"
 # run a temporary webserver to share current directory
 alias runpyws="python3 -m http.server"
+# make a new folder and cd into it
+mkcd(){ NAME=$1; mkdir -p "$NAME"; cd "$NAME"; }
 # check if port is open 
 #   "portping <host> <port>"
 portping(){ [[ -n "$1" && -n "$2" ]] && while true; do nc -zvw1 $1 $2 ; sleep 1 ; done }
@@ -98,7 +100,7 @@ alias ssu="sudo -i"
 
 # SSH
 alias sshr="ssh -l root"
-alias rsshk="ssh-keygen -R"
+alias rkssh="ssh-keygen -R"
 
 # SSH tunnel
 alias sshfladi="ssh ReinerWalter@fondor.fladi.at -L 5222:localhost:5222"
