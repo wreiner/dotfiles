@@ -17,6 +17,9 @@ test -r ~/.git-prompt.sh && . ~/.git-prompt.sh && export GIT_PS1_SHOWDIRTYSTATE=
 # Arch command not found
 test -r /usr/share/doc/pkgfile/command-not-found.bash && . /usr/share/doc/pkgfile/command-not-found.bash
 
+# Openstack RC
+test -r ~/.openstack.rc && . ~/.openstack.rc
+
 ##
 ## History control
 ##
@@ -26,11 +29,24 @@ test -r /usr/share/doc/pkgfile/command-not-found.bash && . /usr/share/doc/pkgfil
 HISTCONTROL=ignoreboth
 export HISTIGNORE="&:ls:[bf]g:pwd:exit:cd .."
 
-HISTSIZE=-1
-HISTFILESIZE=-1
+test -r ~/.bash-functions && . ~/.bash-functions
 
-export HISTSIZE=-1
-export HISTFILESIZE=-1
+# For bash version < 4.3 the histsize parameter is different
+vercomp ${BASH_VERSION} "4.3"
+if [ $? -eq 2 ];
+then
+    HISTSIZE=
+    HISTFILESIZE=
+
+    export HISTSIZE=
+    export HISTFILESIZE=
+else
+    HISTSIZE=-1
+    HISTFILESIZE=-1
+
+    export HISTSIZE=-1
+    export HISTFILESIZE=-1
+fi
 
 # append to the history file, don't overwrite it
 shopt -s histappend
