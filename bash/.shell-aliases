@@ -35,6 +35,10 @@ alias gjava="find . -type f -name '*.java'   | xargs grep"
 alias ghtml="find . -type f -name '*.html'   | xargs grep"
 
 # ls
+
+# https://news.sherlock.stanford.edu/posts/when-setting-an-environment-variable-gives-you-a-40-x-speedup
+LS_COLORS='ex=00:su=00:sg=00:ca=00:'
+
 if [ "$PS1" ]; 
 then
     # enable color support of ls
