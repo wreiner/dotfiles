@@ -28,7 +28,7 @@ Bundle 'wellle/targets.vim'
 
 " https://github.com/tpope/vim-surround
 " Surround.vim is all about "surroundings": parentheses, brackets, quotes, XML tags, and more. The plugin provides mappings to easily delete, change and add such surroundings in pairs.
-" help 
+" help
 "   https://github.com/tpope/vim-surround/blob/master/doc/surround.txt
 "   http://www.vim.org/scripts/script.php?script_id=1697
 Plugin 'tpope/vim-surround'
@@ -78,7 +78,7 @@ set expandtab
 colorscheme default
 function s:SetCursorLine()
     set cursorline
-    hi cursorline cterm=bold 
+    hi cursorline cterm=bold
     " ctermbg=darkblue ctermfg=white
 endfunction
 autocmd VimEnter * call s:SetCursorLine()
@@ -126,6 +126,13 @@ let g:mapleader=","
 
 nmap <leader>p :set paste!<CR>
 map <C-^> :MRU<CR>
+
+" move up and down in long lines
+nnoremap j gj
+nnoremap k gk
+
+" <leader>T = Delete all trailing space in file
+map <leader>T :%s/\s\+$//<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -175,6 +182,33 @@ if !empty(glob("~/.vim/bundle/CamelCaseMotion/plugin/camelcasemotion.vim"))
     call camelcasemotion#CreateMotionMappings('<leader>')
 endif
 
+" Nerdtree
+" Sources
+"   https://github.com/itscram/dotvim/blob/master/vimrc
+let NERDTreeShowHidden=1
+let NERDTreeShowBookmarks=1
+
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
+let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
+
+let NERDTreeIgnore=[
+    \ 'node_modules$[[dir]]',
+    \ '.git$[[dir]]',
+    \ '.vscode$[[dir]]',
+    \ '.idea$[[dir]]',
+    \ '.DS_Store$[[file]]',
+    \ '.swp$[[file]]',
+    \ 'hdevtools.sock$[[file]]',
+    \ '.synctex.gz[[file]]',
+    \ '.fls[[file]]',
+    \ '.fdb_latexmk[[file]]',
+    \ '.aux[[file]]'
+\ ]
+
+
 "let MRU_File = '$HOME/.vim/mru.filess'
 
 " indent guides
@@ -207,4 +241,14 @@ function VIMRCWhere()
 endfunction
 map <C-K> :call VIMRCWhere()<CR>
 
+" https://gist.github.com/dragonken/c29123e597c6fdf022284cf36d245b64
+" Get the 2-space YAML as the default when hit carriage return after the colon
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
+" Highlight characters after line 80
+" https://gist.github.com/romainl/eabe0fe8c564da1b6cfe1826e1482536
+augroup TooLong
+    autocmd!
+    autocmd winEnter,BufEnter * call clearmatches() | call matchadd('ColorColumn', '\%>80v', 100)
+augroup END
