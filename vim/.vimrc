@@ -56,6 +56,10 @@ Plugin 'mru.vim'
 " Indent Guides is a plugin for visually displaying indent levels in Vim.
 Plugin 'nathanaelkane/vim-indent-guides'
 
+" https://github.com/scrooloose/nerdcommenter
+" Comment functions so powerful—no comment necessary
+Plugin 'scrooloose/nerdcommenter'
+
 call vundle#end()
 
 filetype plugin indent on
@@ -75,6 +79,7 @@ set shiftwidth=4
 set smarttab
 set expandtab
 
+" make cursor line font bold
 colorscheme default
 function s:SetCursorLine()
     set cursorline
@@ -84,23 +89,6 @@ endfunction
 autocmd VimEnter * call s:SetCursorLine()
 
 syntax on
-
-" Grey background after 80 chars for PEP8
-" This will add trailing spaces when multiline are copied
-" with mouse.
-"set colorcolumn=80
-"hi ColorColumn ctermbg=15 guibg=#2c2d27
-"let &colorcolumn=join(range(80,999), ',')
-
-"Assume xterm-background is lighter than foreground
-"set background=light
-
-" show ruler
-"set ruler
-"set showmode
-"set showcmd
-
-"set noai
 set report=1
 
 "don't add two spaces after ., ?, !
@@ -125,14 +113,13 @@ let mapleader=","
 let g:mapleader=","
 
 nmap <leader>p :set paste!<CR>
-map <C-^> :MRU<CR>
+
+" <leader>T = Delete all trailing space in file
+map <leader>T :%s/\s\+$//<CR>
 
 " move up and down in long lines
 nnoremap j gj
 nnoremap k gk
-
-" <leader>T = Delete all trailing space in file
-map <leader>T :%s/\s\+$//<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -165,12 +152,13 @@ nnoremap <C-n> :call NumberToggle()<cr>
 autocmd Syntax c,cpp,vim,xml,html,xhtml setlocal foldmethod=syntax
 autocmd Syntax c,cpp,vim,xml,html,xhtml,perl normal zR
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " airline
 set laststatus=2
-"let g:bufferline_echo = 0
 set noshowmode
 let g:airline_theme='badwolf'
 if !exists('g:airline_symbols')
@@ -208,13 +196,26 @@ let NERDTreeIgnore=[
     \ '.aux[[file]]'
 \ ]
 
+" nerdcommenter
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
 
-"let MRU_File = '$HOME/.vim/mru.filess'
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Enable NERDCommenterToggle to check all selected lines is commented or not
+let g:NERDToggleCheckAllLines = 1
 
 " indent guides
-"let g:indent_guides_auto_colors = 0
-"hi IndentGuidesOdd  guibg=red   ctermbg=3
-"hi IndentGuidesEven guibg=green ctermbg=4
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 
@@ -224,8 +225,6 @@ augroup Shebang
   autocmd BufNewFile *.sh 0put =\"#!/bin/sh\"|$
   autocmd BufNewFile *.rb 0put =\"#!/usr/bin/env ruby\"|$
 augroup END
-
-" WREINER ADDED USING http://vim.wikia.com/index.php?title=Category:VimTip
 
 " Highlight current word to find cursor by hitting CTRL+K in normal mode
 " http://vim.wikia.com/wiki/Highlight_current_word_to_find_cursor
