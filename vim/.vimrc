@@ -56,9 +56,10 @@ Plugin 'mru.vim'
 " Indent Guides is a plugin for visually displaying indent levels in Vim.
 Plugin 'nathanaelkane/vim-indent-guides'
 
-" https://github.com/scrooloose/nerdcommenter
-" Comment functions so powerful—no comment necessary
-Plugin 'scrooloose/nerdcommenter'
+" https://github.com/tpope/vim-commentary
+" Comment stuff out.
+" ma jj gc 'a
+Plugin 'tpope/vim-commentary'
 
 call vundle#end()
 
@@ -196,24 +197,9 @@ let NERDTreeIgnore=[
     \ '.aux[[file]]'
 \ ]
 
-" nerdcommenter
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
-
-" Align line-wise comment delimiters flush left instead of following code indentation
-let g:NERDDefaultAlign = 'left'
-
-" Allow commenting and inverting empty lines (useful when commenting a region)
-let g:NERDCommentEmptyLines = 1
-
-" Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
-
-" Enable NERDCommenterToggle to check all selected lines is commented or not
-let g:NERDToggleCheckAllLines = 1
+" Show Nerdtree
+map <leader>n :NERDTreeToggle<cr>
+"map <silent> <C-n> :NERDTreeToggle<CR>
 
 " indent guides
 let g:indent_guides_enable_on_vim_startup = 1
@@ -225,6 +211,13 @@ augroup Shebang
   autocmd BufNewFile *.sh 0put =\"#!/bin/sh\"|$
   autocmd BufNewFile *.rb 0put =\"#!/usr/bin/env ruby\"|$
 augroup END
+
+" Substitute the word under the cursor.
+" https://github.com/jeremyckahn/dotfiles/blob/master/.vimrc
+nmap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
+
+" Quickly get rid of highlighting
+noremap <leader>h :noh<CR>
 
 " Highlight current word to find cursor by hitting CTRL+K in normal mode
 " http://vim.wikia.com/wiki/Highlight_current_word_to_find_cursor
