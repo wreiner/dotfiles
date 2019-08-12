@@ -33,6 +33,7 @@ alias gpy="find . -type f -name '*.py'   | xargs grep"
 alias gpp="find . -type f -name '*.pp'   | xargs grep"
 alias gjava="find . -type f -name '*.java'   | xargs grep"
 alias ghtml="find . -type f -name '*.html'   | xargs grep"
+alias gyml="find . -type f -name '*.yml' | xargs grep"
 
 # ls
 
@@ -47,6 +48,7 @@ then
         alias ls='ls --color=auto'
     fi
 fi
+alias l='ls -lpNrth'
 alias ll='ls -lpN'
 alias la='ls -lapN'
 alias lh="ls -a | grep '^\.'"
@@ -104,6 +106,8 @@ alias ssu="sudo -i"
 
 # SSH
 alias sshr="ssh -l root"
+alias ssha="ssh -l ansible"
+alias sshc="ssh -l centos"
 alias rkssh="ssh-keygen -R"
 
 # SSH tunnel
@@ -120,6 +124,10 @@ alias wrmctunnel="ssh dja01.wreiner.at -L 25565:localhost:25565"
 # webserver
 alias webd="cd /var/www"
 alias webtmp="cd /var/www/vhosts/www.wreiner.at/webtmp"
+
+# virsh kvm
+alias virshl="sudo virsh list --all"
+alias virstart="sudo virsh start"
 
 # --- BE ---
 
