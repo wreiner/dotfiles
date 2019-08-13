@@ -17,9 +17,6 @@ test -r ~/.git-prompt.sh && . ~/.git-prompt.sh && export GIT_PS1_SHOWDIRTYSTATE=
 # Arch command not found
 test -r /usr/share/doc/pkgfile/command-not-found.bash && . /usr/share/doc/pkgfile/command-not-found.bash
 
-# Openstack RC
-test -r ~/.openstack.rc && . ~/.openstack.rc
-
 ##
 ## History control
 ##
@@ -79,4 +76,9 @@ esac
 
 export TERM='xterm-256color'
 
+# fzf key bindings
+test -r /usr/share/fzf/key-bindings.bash && source /usr/share/fzf/key-bindings.bash
+test -r /usr/share/fzf/completion.bash && . /usr/share/fzf/completion.bash
+
+# local sources which are not tracked in VCS
 test -r ~/.bashrc.local && . ~/.bashrc.local
