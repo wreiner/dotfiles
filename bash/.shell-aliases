@@ -61,6 +61,7 @@ alias h="history"
 alias passgen="pwgen -c -y"
 alias gqview="/usr/bin/geeqie"
 alias ports="ss -naptu state listening"
+alias bat="bat --theme='ansi-light' --plain"
 # show size of contents in directory sorted
 alias orddu="du -hs * | sort -hr"
 # run a temporary webserver to share current directory
