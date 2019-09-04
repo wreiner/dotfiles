@@ -37,13 +37,22 @@ alias gyml="find . -type f -name '*.yml' | xargs grep"
 
 # ls
 
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     os_type=Linux;;
+    Darwin*)    os_type=Mac;;
+    CYGWIN*)    os_type=Cygwin;;
+    MINGW*)     os_type=MinGw;;
+    *)          os_type="UNKNOWN:${unameOut}"
+esac
+
 # https://news.sherlock.stanford.edu/posts/when-setting-an-environment-variable-gives-you-a-40-x-speedup
 LS_COLORS='ex=00:su=00:sg=00:ca=00:'
 
 if [ "$PS1" ]; 
 then
     # enable color support of ls
-    if [ "$TERM" != "dumb" ];
+    if [ "$TERM" != "dumb" ] && [ "${os_type}" != "Mac" ];
     then
         alias ls='ls --color=auto'
     fi
