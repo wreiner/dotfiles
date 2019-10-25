@@ -63,6 +63,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-sensible'
 Plug 'junegunn/seoul256.vim'
 
+" Python linter (needs flake8 installed)
+Plug 'nvie/vim-flake8'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
