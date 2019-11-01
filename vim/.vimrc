@@ -275,3 +275,7 @@ nmap <Leader>f :Files<CR>
 nmap <Leader>l :Lines<CR>
 nmap <Leader>t :Tags<CR>
 nmap <Leader>a :Ag<Space>
+
+" --- TabNine
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
