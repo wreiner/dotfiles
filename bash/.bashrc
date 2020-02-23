@@ -45,6 +45,10 @@ else
     export HISTFILESIZE=-1
 fi
 
+# hist file per host for possible sync of histfiles
+test -d "$HOME/.history" || mkdir "$HOME/.history"
+HISTFILE="$HOME/.history/`hostname`.history"
+
 # append to the history file, don't overwrite it
 shopt -s histappend
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
