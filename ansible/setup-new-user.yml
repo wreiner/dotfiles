@@ -34,11 +34,11 @@
       - name: stow vim
         command: stow -d ~/.dotfiles -t $HOME vim
 
-      - name: Install vundle
-        git: repo=https://github.com/VundleVim/Vundle.vim.git dest=~/.vim/bundle/Vundle.vim force=no
+      - name: Install vim plug
+        command: curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
       - name: Install Plugins
-        command: /usr/bin/vim +BundleInstall +qall
+        command: /usr/bin/vim +PlugInstall +qall
 
       - name: stow git
         command: stow -d ~/.dotfiles -t $HOME git
