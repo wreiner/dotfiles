@@ -1,0 +1,5 @@
+# do not track ssh keys
+ssh/.ssh/id*
+
+# do not track known_hosts
+ssh/.ssh/known_hosts
