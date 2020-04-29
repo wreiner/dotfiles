@@ -71,6 +71,7 @@ alias passgen="pwgen -c -y"
 alias gqview="/usr/bin/geeqie"
 alias ports="ss -naptu state listening"
 alias bat="bat --theme='ansi-light' --plain"
+alias tailf="tail -f"
 # lsblk on steroids
 alias llsblk="lsblk -o NAME,MODEL,SERIAL,SIZE,PATH,MOUNTPOINT,FSTYPE,UUID,LABEL"
 # show size of contents in directory sorted
