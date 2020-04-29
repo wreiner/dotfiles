@@ -29,6 +29,10 @@ Plug 'tpope/vim-fugitive'
 " https://github.com/wellle/targets.vim
 Plug 'wellle/targets.vim'
 
+" A very fast, multi-syntax context-sensitive color name highlighter
+" https://github.com/ap/vim-css-color
+Plug 'ap/vim-css-color'
+
 " Surround.vim is all about surroundings: parentheses, brackets, quotes, XML
 " tags, and more. The plugin provides mappings to easily delete, change and
 " add such surroundings in pairs.
