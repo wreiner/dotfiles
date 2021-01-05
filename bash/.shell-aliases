@@ -83,6 +83,9 @@ mkcd(){ NAME=$1; mkdir -p "$NAME"; cd "$NAME"; }
 # check if port is open 
 #   "portping <host> <port>"
 portping(){ [[ -n "$1" && -n "$2" ]] && while true; do nc -zvw1 $1 $2 ; sleep 1 ; done }
+# https://ostechnix.com/how-to-use-pbcopy-and-pbpaste-commands-on-linux/
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 
 # youtube-dl
 
