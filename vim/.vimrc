@@ -22,7 +22,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " fugitive.vim may very well be the best Git wrapper of all time
 " https://github.com/tpope/vim-fugitive
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 
 " Targets.vim is a Vim plugin that adds various text objects to give you more
 " targets to operate on.
