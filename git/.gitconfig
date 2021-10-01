@@ -7,3 +7,5 @@
 	autocrlf = input
 [merge]
 	tool = meld
+[alias]
+	pushall = !git remote | xargs -L1 git push --all
