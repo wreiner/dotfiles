@@ -1,5 +1,14 @@
 # do not track ssh keys
 ssh/.ssh/id*
 
+# do not even track authorized_keys
+ssh/.ssh/authorized_keys
+
 # do not track known_hosts
-ssh/.ssh/known_hosts
+ssh/.ssh/known_hosts*
+
+# do not track old keys
+ssh/.ssh/deprecated*
+
+# do not track local ssh configs
+ssh/.ssh/conf.d/sshconfig.local
