@@ -57,7 +57,7 @@ Plug 'tpope/vim-commentary'
 
 " AI auto complete
 " https://tabnine.com/install
-Plug 'zxqfl/tabnine-vim'
+"Plug 'zxqfl/tabnine-vim'
 
 " Bundle of fzf-based commands and mappings
 " https://github.com/junegunn/fzf.vim
