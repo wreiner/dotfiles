@@ -115,6 +115,7 @@ alias pacinsd='sudo pacman -S --asdeps'        # Install given package(s) as dep
 alias pacmir='sudo pacman -Syy'
 alias pacclrcache='sudo paccache -r -k 2'
 alias upgrwatch="watch \"df -h | grep 'root_lv\|tmp_lv\|var_lv\|opt_lv'\""
+alias yay="yay --cleanafter"
 
 # secure operations
 alias rm="rm -i"
@@ -129,7 +130,6 @@ alias sshc="ssh -l centos"
 alias rkssh="ssh-keygen -R"
 
 # SSH tunnel
-alias sshfladi="ssh ReinerWalter@fondor.fladi.at -L 5222:localhost:5222"
 alias sshhetzner="ssh web01.wreiner.at"
 alias sshhetznerp="ssh web01.wreiner.at -L 3129:127.0.0.1:3128"
 alias sshhetznerm="ssh web01.wreiner.at -L 3125:localhost:25"
@@ -147,34 +147,15 @@ alias webtmp="cd /var/www/vhosts/www.wreiner.at/webtmp"
 alias virshl="sudo virsh list --all"
 alias virstart="sudo virsh start"
 
-# --- BE ---
+# Google Suite
+alias gcal="google-chrome-stable --app=https://calendar.google.com"
+alias gmail="google-chrome-stable --app=https://mail.google.com"
+alias gchat="google-chrome-stable --app=https://mail.google.com/chat"
 
-# BE-VPN
-alias vpncon="sudo vpnc-connect be-vpnc.conf"
-alias vpndiscon="sudo vpnc-disconnect"
+# fhj
+alias sem3="cd ~/tmp/_sem3-swd22/"
+alias sem4="cd ~/tmp/_sem4-swd22/"
+alias sem5="cd ~/tmp/_sem5-swd22/"
+alias bakk="cd ~/priv/bakk/loganalysis/"
 
-# SSD dev aliases
-alias cds='cd /opt/dashboard/ssd'
-alias sshdev='ssh ssddev01'
-alias initssddev='source /opt/dashboard/bin/activate; cd /opt/dashboard/ssd'
 
-alias ssdndevdeploy="avrsync -n --exclude '.git' --exclude 'log' /home/wreiner/bearingpoint/python/ssd/ root@10.1.80.142:/opt/SSD-REL-2.1/"
-alias ssddevdeploy="avrsync --exclude '.git' --exclude 'log' /home/wreiner/bearingpoint/python/ssd/ root@10.1.80.142:/opt/SSD-REL-2.1/"
-
-alias pssdndevdeploy="avrsync -n --exclude '.git' --exclude 'log' /home/wreiner/bearingpoint/python/ssd/ root@10.1.80.142:/opt/dashboard/ssd/"
-alias pssddevdeploy="avrsync --exclude '.git' --exclude 'log' /home/wreiner/bearingpoint/python/ssd/ root@10.1.80.142:/opt/dashboard/ssd/"
-
-alias rnssdndevget="avrsync -n --exclude '__pycache__' --exclude '.git' --exclude 'log' ssddev01:/opt/dashboard/ssd/ /home/wreiner/bearingpoint/python/ssd/"
-alias rnssddevget="avrsync --exclude '.git' --exclude 'log' ssddev01:/opt/dashboard/ssd/ /home/wreiner/bearingpoint/python/ssd/"
-
-alias nssdndevdeploy="avrsync -n --exclude '.git' --exclude 'log' /home/wreiner/bearingpoint/python/ssd/ root@10.1.80.159:/opt/dashboard/ssd/"
-alias nssddevdeploy="avrsync --exclude '.git' --exclude 'log' /home/wreiner/bearingpoint/python/ssd/ root@10.1.80.159:/opt/dashboard/ssd/"
-
-# SSH
-alias sshrook="ssh -l rrook"
-
-# SSH tunnel
-alias sshabanex="ssh root@abacvs -L 8081:127.0.0.1:8081"
-
-# techu DC01
-alias dc01rd="rdesktop -g 1366x768 grzdc01.techu.local"
