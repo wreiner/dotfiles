@@ -17,7 +17,7 @@ export LESS='-iFMRSX -x4'
 ##
 ## Paths
 ##
-export PATH=$HOME/bin:$PATH:/sbin:/usr/sbin:/usr/local/qemu/bin:/usr/local/maven/bin:/$JAVA_HOME/bin:~/bin:/opt/android/android-sdk-linux/platform-tools:/opt/android/eclipse
+export PATH=$HOME/bin:$PATH:/sbin:/usr/sbin:/usr/local/qemu/bin:/usr/local/maven/bin:/$JAVA_HOME/bin:~/bin:/opt/android/android-sdk-linux/platform-tools:/opt/android/eclipse:$HOME/.cargo/bin
 
 ##
 ## Java
