@@ -12,7 +12,7 @@ test -r ~/.shell-aliases && . ~/.shell-aliases
 test -r /usr/share/bash-completion/bash_completion && source /usr/share/bash-completion/bash_completion
 
 # show kubernetes context
-test -r ~/.kube-ps1.sh && source ~/.kube-ps1.sh
+#test -r ~/.kube-ps1.sh && source ~/.kube-ps1.sh
 
 # Git completion
 test -r ~/.bashgit-completion.bash && . ~/.bashgit-completion.bash
@@ -77,7 +77,7 @@ set -o vi
 ## Prompt
 ##
 
-PS1='`if [ $? = 0 ]; then echo "\[\e[32m\] ✔ "; else echo "\[\e[31m\] ✘ "; fi`\[\e[01;30m\]\t \[\e[00;00m\]\u@\h\[\e[01;00m\]:\[\e[01;34m\] \w\[\e[00m\]\[\e[32m\]$(__git_ps1) $(kube_ps1)\[\e[00m\] \$ '
+PS1='`if [ $? = 0 ]; then echo "\[\e[32m\] ✔ "; else echo "\[\e[31m\] ✘ "; fi`\[\e[01;30m\]\t \[\e[00;00m\]\u@\h\[\e[01;00m\]:\[\e[01;34m\] \w\[\e[00m\]\[\e[32m\]$(__git_ps1) \[\e[00m\] \$ '
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
