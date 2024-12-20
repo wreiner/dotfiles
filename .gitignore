@@ -11,4 +11,7 @@ ssh/.ssh/known_hosts*
 ssh/.ssh/deprecated*
 
 # do not track local ssh configs
-ssh/.ssh/conf.d/sshconfig.local
+ssh/.ssh/conf.d/*.local
+
+# do not track live keys
+ssh/.ssh/live
